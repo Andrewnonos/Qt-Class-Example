@@ -12,34 +12,6 @@
 
 #define DEFAULT_LVL -110
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
-class CDataPoint {                          ///< Класс для формирования данных
-public:
-    unsigned int time;                      ///< Время
-    double latitude;                        ///< Широта
-    double longitude;                       ///< Долгота
-    unsigned int height;                    ///< Высота
-    unsigned int centralFreq;               ///< Центральная частота
-    int level;                              ///< Уровень сигнала
-    bool spike;                             ///< Наличие скачка
-
-    QVariantMap ToQVariantMap() {           ///< Преобразование в QVariantMap для QML
-        QVariantMap result;
-        result["time"]          = time;
-        result["latitude"]      = latitude;
-        result["longitude"]     = longitude;
-        result["height"]        = height;
-        result["centralFreq"]   = centralFreq;
-        result["level"]         = level;
-        result["spike"]         = spike;
-
-        return result;
-    }
-};
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
 class CVisualization: public QObject            ///< Модуль визуализации
 {
     Q_OBJECT
